@@ -53,14 +53,14 @@ public class MainActivity extends AppCompatActivity {
 
     private void crearLista(){
         ListView lista=(ListView)findViewById(R.id.lista);
-        //ArrayAdapter<Pelicula> adaptador = new ArrayAdapter<Pelicula>(this,android.R.layout.simple_expandable_list_item_1,listaPeliculas);
-
         lista.setAdapter(new ListaPeliculas(this,listaPeliculas));
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                pelicula=(Pelicula)
+                pelicula=(Pelicula)parent.getItemAtPosition(position);
+                Intent intent=new Intent(getApplication(),DetallePeliculas.class);
+                startActivity(intent);
             }
         });
     }
