@@ -1,5 +1,7 @@
 package com.iesvirgendelcarmen.dam.peliculasapp;
 
+import android.widget.TextView;
+
 /**
  * Created by matinal on 29/05/2018.
  */
@@ -10,7 +12,7 @@ public class Pelicula {
     private String genero;
     private String sinopsis;
 
-    public Pelicula() {}
+    public Pelicula(String nombre) {}
 
     public Pelicula(String nombre, String director, String genero, String sinopsis) {
         this.nombre = nombre;

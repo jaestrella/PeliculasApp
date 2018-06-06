@@ -1,6 +1,8 @@
 package com.iesvirgendelcarmen.dam.peliculasapp;
 
 import android.content.Intent;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -57,13 +59,12 @@ public class MainActivity extends AppCompatActivity {
 
         lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                pelicula=(Pelicula)parent.getItemAtPosition(position);
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                pelicula = (Pelicula) adapterView.getItemAtPosition(i);
                 Intent intent=new Intent(getApplication(),DetallePeliculas.class);
                 startActivity(intent);
             }
         });
     }
-
 
 }

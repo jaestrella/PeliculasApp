@@ -20,18 +20,6 @@ import java.util.List;
 public class ListaPeliculas extends BaseAdapter{
     private List<Pelicula>peliculas;
     private Context context;
-    /*
-    ListView lista;
-    private Pelicula p;
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.lista_peliculas);
-
-        lista=(ListView)findViewById(R.id.lista);
-        ArrayAdapter<Pelicula> adaptador = new ArrayAdapter<Pelicula>(this,android.R.layout.simple_expandable_list_item_1) ;
-        lista.setAdapter(adaptador);
-    }*/
 
    public ListaPeliculas(Context nContext,List<Pelicula>peliculaList){
        this.peliculas=peliculaList;
