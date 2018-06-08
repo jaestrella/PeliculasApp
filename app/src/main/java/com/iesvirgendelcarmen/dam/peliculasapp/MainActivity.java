@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
     Button botonAnnadir;
     private Pelicula pelicula;
     private ArrayList<Pelicula>listaPeliculas=new ArrayList<Pelicula>();
+    private String nombre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         botonAnnadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombre = etnombre.getText().toString();
+                nombre = etnombre.getText().toString();
                 String director = etdirector.getText().toString();
                 String genero = etgenero.getText().toString();
                 String sinopsis = etsinopsis.getText().toString();
@@ -62,6 +63,7 @@ public class MainActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 pelicula = (Pelicula) adapterView.getItemAtPosition(i);
                 Intent intent=new Intent(getApplication(),DetallePeliculas.class);
+                intent.putExtra("TITULO: ","TITULO: "+nombre);
                 startActivity(intent);
             }
         });

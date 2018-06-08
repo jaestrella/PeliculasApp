@@ -18,8 +18,9 @@ public class DetallePeliculas extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detalle_peliculas);
         detallenombre=(TextView)findViewById(R.id.detallenombre);
-        detallenombre.setText("TITULO: "+pelicula.getNombre());
-        nombre= detallenombre.getText().toString();
-
+        //detallenombre.setText("TITULO: "+pelicula.getNombre());
+        //nombre= detallenombre.getText().toString();
+        Bundle extras = getIntent().getExtras();
+        detallenombre.setText(extras.get("TITULO: ").toString() + "\n");
     }
 }
