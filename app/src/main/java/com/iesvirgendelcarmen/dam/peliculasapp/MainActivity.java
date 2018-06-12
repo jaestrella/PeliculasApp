@@ -1,26 +1,29 @@
 package com.iesvirgendelcarmen.dam.peliculasapp;
 
 import android.content.Intent;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import adaptador.ListaPeliculas;
+import detalle.DetallePeliculas;
+import modelos.Pelicula;
+import modelos.api.PeliculasAPI;
 
 public class MainActivity extends AppCompatActivity {
     TextView tvnombre,tvdirector,tvgenero,tvsinopsis;
     EditText etnombre,etdirector,etgenero,etsinopsis;
     Button botonAnnadir;
     private Pelicula pelicula;
-    private ArrayList<Pelicula>listaPeliculas=new ArrayList<Pelicula>();
+    private List<Pelicula>listaPeliculas=new ArrayList<Pelicula>();
     private String nombre;
 
     @Override
@@ -48,10 +51,37 @@ public class MainActivity extends AppCompatActivity {
 
                 pelicula=new Pelicula(nombre,director,genero,sinopsis);
                 listaPeliculas.add(pelicula);
+                //cargarPelicula();
                 crearLista();
             }
         });
 
+
+    }
+
+    private void cargarPelicula(){
+        PeliculasAPI api=new PeliculasAPI();
+
+        api.getPeliculas(this, new PeliculasAPI.CallbackPeliculas() {
+            @Override
+            public void getPeliculas(List<Pelicula> peliculas) {
+                MainActivity.this.listaPeliculas=peliculas;
+                ListView lista=(ListView)findViewById(R.id.lista);
+                lista.setAdapter(new ListaPeliculas(MainActivity.this,listaPeliculas));
+
+                lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        pelicula = (Pelicula) adapterView.getItemAtPosition(i);
+                        Intent intent=new Intent(getApplication(), DetallePeliculas.class);
+                        intent.putExtra("TITULO: ","TITULO: "+nombre);
+                        startActivity(intent);
+                    }
+                });
+
+
+            }
+        });
     }
 
     private void crearLista(){
@@ -62,11 +92,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 pelicula = (Pelicula) adapterView.getItemAtPosition(i);
-                Intent intent=new Intent(getApplication(),DetallePeliculas.class);
+                Intent intent=new Intent(getApplication(), DetallePeliculas.class);
                 intent.putExtra("TITULO: ","TITULO: "+nombre);
                 startActivity(intent);
             }
         });
     }
-
 }

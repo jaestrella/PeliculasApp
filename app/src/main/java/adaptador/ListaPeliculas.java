@@ -1,17 +1,17 @@
-package com.iesvirgendelcarmen.dam.peliculasapp;
+package adaptador;
 
 import android.content.Context;
-import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
-import android.widget.ListView;
 import android.widget.TextView;
 
+import com.iesvirgendelcarmen.dam.peliculasapp.R;
+
 import java.util.List;
+
+import modelos.Pelicula;
 
 /**
  * Created by matinal on 29/05/2018.

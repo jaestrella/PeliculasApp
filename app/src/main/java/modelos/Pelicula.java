@@ -1,4 +1,4 @@
-package com.iesvirgendelcarmen.dam.peliculasapp;
+package modelos;
 
 import android.widget.TextView;
 

@@ -1,9 +1,12 @@
-package com.iesvirgendelcarmen.dam.peliculasapp;
+package detalle;
 
-import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
+
+import com.iesvirgendelcarmen.dam.peliculasapp.R;
+
+import modelos.Pelicula;
 
 /**
  * Created by matinal on 29/05/2018.
