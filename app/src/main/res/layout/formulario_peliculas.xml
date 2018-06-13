@@ -6,6 +6,21 @@
     android:orientation="vertical">
 
     <TextView
+        android:id="@+id/tvid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Identificador de pelicula:"
+        android:gravity="center"/>
+
+    <EditText
+        android:id="@+id/etid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Identificador"
+        android:backgroundTint="#f00"
+        android:inputType="text"/>
+
+    <TextView
         android:id="@+id/tvnombre"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

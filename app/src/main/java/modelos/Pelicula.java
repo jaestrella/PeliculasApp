@@ -7,6 +7,7 @@ import android.widget.TextView;
  */
 
 public class Pelicula {
+    private int id;
     private String nombre;
     private String director;
     private String genero;
@@ -14,13 +15,22 @@ public class Pelicula {
 
     public Pelicula() {}
 
-    public Pelicula(String nombre, String director, String genero, String sinopsis) {
+    public Pelicula(int id,String nombre, String director, String genero, String sinopsis) {
+        this.id=id;
         this.nombre = nombre;
         this.director = director;
         this.genero = genero;
         this.sinopsis = sinopsis;
     }
-   
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
     public String getNombre() {
         return nombre;
     }

@@ -25,8 +25,8 @@ import modelos.api.PeliculasAPI;
  */
 
 public class Formulario extends AppCompatActivity {
-    TextView tvnombre,tvdirector,tvgenero,tvsinopsis;
-    EditText etnombre,etdirector,etgenero,etsinopsis;
+    TextView tvnombre,tvdirector,tvgenero,tvsinopsis,tvid;
+    EditText etnombre,etdirector,etgenero,etsinopsis,etid;
     Button botonAnnadir,irLista;
     private Pelicula pelicula;
     private List<Pelicula> listaPeliculas=new ArrayList<Pelicula>();
@@ -35,10 +35,12 @@ public class Formulario extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.formulario_peliculas);
 
+        tvid=(TextView)findViewById(R.id.tvid);
         tvnombre=(TextView)findViewById(R.id.tvnombre);
         tvdirector=(TextView)findViewById(R.id.tvdirector);
         tvgenero=(TextView)findViewById(R.id.tvgenero);
         tvsinopsis=(TextView)findViewById(R.id.tvsinopsis);
+        etid=(EditText) findViewById(R.id.etid);
         etnombre=(EditText) findViewById(R.id.etnombre);
         etdirector=(EditText) findViewById(R.id.etdirector);
         etgenero=(EditText) findViewById(R.id.etgenero);
@@ -66,7 +68,7 @@ public class Formulario extends AppCompatActivity {
 
     }
     private void addPelicula() {
-        Pelicula pelicula = new Pelicula(etnombre.getText().toString(), etdirector.getText().toString(), etgenero.getText().toString(), etsinopsis.getText().toString());
+        Pelicula pelicula = new Pelicula(Integer.parseInt(etid.getText().toString()),etnombre.getText().toString(), etdirector.getText().toString(), etgenero.getText().toString(), etsinopsis.getText().toString());
         PeliculasAPI api = new PeliculasAPI();
 
         api.postPeliculas(pelicula, this);
