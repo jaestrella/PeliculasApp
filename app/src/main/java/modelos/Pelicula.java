@@ -12,7 +12,7 @@ public class Pelicula {
     private String genero;
     private String sinopsis;
 
-    public Pelicula(String nombre) {}
+    public Pelicula() {}
 
     public Pelicula(String nombre, String director, String genero, String sinopsis) {
         this.nombre = nombre;
@@ -20,7 +20,7 @@ public class Pelicula {
         this.genero = genero;
         this.sinopsis = sinopsis;
     }
-
+   
     public String getNombre() {
         return nombre;
     }

@@ -15,15 +15,14 @@ import modelos.Pelicula;
 public class DetallePeliculas extends AppCompatActivity {
     private TextView detallenombre;
     private String nombre;
-    private Pelicula pelicula=new Pelicula(nombre);
+   // private Pelicula pelicula=new Pelicula(nombre);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detalle_peliculas);
         detallenombre=(TextView)findViewById(R.id.detallenombre);
-        //detallenombre.setText("TITULO: "+pelicula.getNombre());
-        //nombre= detallenombre.getText().toString();
-        Bundle extras = getIntent().getExtras();
-        detallenombre.setText(extras.get("TITULO: ").toString() + "\n");
+       // detallenombre.setText("TITULO: "+pelicula.getNombre());
+
+
     }
 }

@@ -7,82 +7,15 @@
     android:orientation="vertical"
     tools:context="com.iesvirgendelcarmen.dam.peliculasapp.MainActivity">
 
-    <TextView
-        android:id="@+id/tvnombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Título de pelicula:"
-        android:gravity="center"/>
-
-    <EditText
-        android:id="@+id/etnombre"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Título"
-        android:backgroundTint="#f00"
-        android:inputType="text"/>
-
-    <TextView
-        android:id="@+id/tvdirector"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Director:"
-        android:gravity="center"/>
-
-    <EditText
-        android:id="@+id/etdirector"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Director"
-        android:backgroundTint="#f00"
-        android:inputType="text"/>
-
-    <TextView
-        android:id="@+id/tvgenero"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Genero:"
-        android:gravity="center"/>
-
-    <EditText
-        android:id="@+id/etgenero"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Genero"
-        android:backgroundTint="#f00"
-        android:inputType="text"/>
-
-    <TextView
-        android:id="@+id/tvsinopsis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Sinopsis:"
-        android:gravity="center"/>
-
-    <EditText
-        android:id="@+id/etsinopsis"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Sinopsis"
-        android:backgroundTint="#f00"
-        android:inputType="text"/>
-
-    <Button
-        android:id="@+id/botonAnnadir"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Añadir"/>
-
     <ListView
         android:id="@+id/lista"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"></ListView>
 
-    <FrameLayout
-        android:id="@+id/contenedorPrincipal"
-        android:orientation="vertical"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-    </FrameLayout>
+    <Button
+        android:id="@+id/irFormulario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Formulario"/>
 
 </LinearLayout>
