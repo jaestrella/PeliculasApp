@@ -8,6 +8,25 @@
     <TextView
         android:id="@+id/detallenombre"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="Titulo: "/>
+
+    <TextView
+        android:id="@+id/detalledirector"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Director: "/>
+
+    <TextView
+        android:id="@+id/detallegenero"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Genero: "/>
+
+    <TextView
+        android:id="@+id/detallesinopsis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sinopsis: "/>
 
 </LinearLayout>

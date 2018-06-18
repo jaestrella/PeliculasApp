@@ -18,7 +18,7 @@
         android:layout_height="wrap_content"
         android:hint="Identificador"
         android:backgroundTint="#f00"
-        android:inputType="text"/>
+        android:inputType="number"/>
 
     <TextView
         android:id="@+id/tvnombre"

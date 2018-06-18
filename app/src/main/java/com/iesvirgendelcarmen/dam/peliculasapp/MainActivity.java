@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button irFormulario;
     private List<Pelicula>listaPeliculas=new ArrayList<Pelicula>();
-
+    private Pelicula pelicula;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,7 +56,12 @@ public class MainActivity extends AppCompatActivity {
                 lista.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                        pelicula = (Pelicula) adapterView.getItemAtPosition(i);
                         Intent intent=new Intent(getApplication(), DetallePeliculas.class);
+                        intent.putExtra("Titulo: ",pelicula.getNombre());
+                        intent.putExtra("Director: ",pelicula.getDirector());
+                        intent.putExtra("Genero: ",pelicula.getGenero());
+                        intent.putExtra("Sinopsis: ",pelicula.getSinopsis());
                         startActivity(intent);
                     }
                 });

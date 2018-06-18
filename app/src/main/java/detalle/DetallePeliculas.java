@@ -13,15 +13,29 @@ import modelos.Pelicula;
  */
 
 public class DetallePeliculas extends AppCompatActivity {
-    private TextView detallenombre;
-    private String nombre;
-   // private Pelicula pelicula=new Pelicula(nombre);
+    private TextView detallenombre,detalledirector,detallegenero,detallesinopsis;
+    private String nombre,director,genero,sinopsis;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.detalle_peliculas);
-        detallenombre=(TextView)findViewById(R.id.detallenombre);
-       // detallenombre.setText("TITULO: "+pelicula.getNombre());
+
+        detallenombre=findViewById(R.id.detallenombre);
+        detalledirector=findViewById(R.id.detalledirector);
+        detallegenero=findViewById(R.id.detallegenero);
+        detallesinopsis=findViewById(R.id.detallesinopsis);
+
+        nombre = getIntent().getStringExtra("Titulo: ");
+        director = getIntent().getStringExtra("Director: ");
+        genero = getIntent().getStringExtra("Genero: ");
+        sinopsis = getIntent().getStringExtra("Sinopsis: ");
+
+        detallenombre.setText(nombre);
+        detalledirector.setText(director);
+        detallegenero.setText(genero);
+        detallesinopsis.setText(sinopsis);
+
 
 
     }
