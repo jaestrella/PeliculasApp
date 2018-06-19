@@ -68,7 +68,7 @@ public class Formulario extends AppCompatActivity {
 
     }
     private void addPelicula() {
-        Pelicula pelicula = new Pelicula(Integer.parseInt(etid.getText().toString()),etnombre.getText().toString(), etdirector.getText().toString(), etgenero.getText().toString(), etsinopsis.getText().toString());
+        Pelicula pelicula = new Pelicula(Long.parseLong(etid.getText().toString()),etnombre.getText().toString(), etdirector.getText().toString(), etgenero.getText().toString(), etsinopsis.getText().toString());
         PeliculasAPI api = new PeliculasAPI();
         api.postPeliculas(pelicula, this);
 

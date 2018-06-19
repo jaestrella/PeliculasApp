@@ -31,10 +31,10 @@ public class DetallePeliculas extends AppCompatActivity {
         genero = getIntent().getStringExtra("Genero: ");
         sinopsis = getIntent().getStringExtra("Sinopsis: ");
 
-        detallenombre.setText(nombre);
-        detalledirector.setText(director);
-        detallegenero.setText(genero);
-        detallesinopsis.setText(sinopsis);
+        detallenombre.setText("TITULO: "+nombre);
+        detalledirector.setText("DIRECTOR: "+director);
+        detallegenero.setText("GENERO: "+genero);
+        detallesinopsis.setText("SINOPSIS: "+sinopsis);
 
 
 
